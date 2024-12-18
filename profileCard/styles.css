@@ -1,0 +1,348 @@
+@font-face {
+    font-family: 'Trebuchet MS';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Trebuchet MS'), url('font/trebuc.woff'), format('woff');
+}
+
+
+@font-face {
+    font-family: 'Trebuchet MS Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Trebuchet MS Italic'), url('font/Trebuchet-MS-Italic.woff'), format('woff');
+}
+
+:root {
+
+    --white: #fff;
+    --black: #000;
+    --cardBorder: #cbc5c547;
+    --cardBackground: #ffffff1a;
+    --btnBg: #ffffff00;
+    --btnFocus: #ffffffb9;
+
+    --facebook : #1771e6;
+    --twitter : #1c99e6;
+    --instagram : #cb2770;
+    --whatsapp : #2fe664;
+    --telegram : #0081c2;
+    --github : rgb(88, 101, 242);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.button {
+    color: inherit;
+    border: 1px solid;
+    padding: 8px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: color 0.5s ease, background-Color 0.5s ease, font-size 0.5s 0.3s ease, padding 0.5s 0.3s ease;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.93);
+    color: #000;
+    font-size: 1.3em;
+    padding: 6px 4px;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 62.5%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 8;
+
+    overflow-y: scroll;
+
+    .card {
+        padding: 2rem 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        position: relative;
+        z-index: 10;
+
+        background: var(--cardBackground);
+        border: 4px solid var(--cardBorder);
+        border-radius: 16px;
+        backdrop-filter: blur(1.5rem);
+
+        #profilePhoto {
+            height: 7rem;
+            width: 7rem;
+            border-radius: 100%;
+            border: 1px solid white;
+            border: 2px solid var(--cardBorder);
+            background-image: url(images.jpeg);
+            background-position: 50% 70%;
+            object-fit: cover;
+            box-sizing: content-box;
+            filter: grayscale(100);
+            transition: transform 0.5s ease, filter 0.4s 0.3s ease;
+        }
+
+        #profilePhoto:hover {
+            transform: scale(1.3);
+            filter: grayscale(0);
+
+        }
+
+        #name {
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        #bio {
+            width: 70%;
+            font-size: 16px;
+            font-weight: 100;
+            text-align: center;
+            color: #ffffff85;
+
+        }
+
+        #buttons {
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 0.4rem;
+            width: 80%;
+        }
+        
+    }
+
+    .circle-top {
+        background: linear-gradient(25deg, #ec382c, rgb(242, 116, 66));
+        border-radius: 50%;
+        box-shadow: 0 0 50px #ec382c;
+        height: 8rem;
+        width: 8rem;
+    
+        position: absolute;
+        z-index: 0;
+        top: 25%;
+        left: 30%;
+        transform: translateY(-80%) translateX(-80%);
+        animation: animation-Circle-Top infinite 8s 0s alternate-reverse ease;
+    }
+    
+    .circle-bottom {
+        background: linear-gradient(25deg, #2952f7, #7b30f4);
+        border-radius: 50%;
+        box-shadow: 0 0 50px #2952f7;
+        height: 12rem;
+        width: 12rem;
+    
+        position: absolute;
+        z-index: 0;
+        bottom: 25%;
+        right: 30%;
+        transform: translateY(80%) translateX(80%);
+        animation: animation-Circle-Bottom infinite 8s 0s alternate-reverse ease;
+    }
+
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transform: scale(0);
+
+    background: #00000088;
+    border: 0.2rem solid #ffffff59;
+    padding: 1rem 1rem;
+    border-radius: 15px;
+    backdrop-filter: blur(1rem);
+
+    position: absolute;
+    z-index: 30;
+
+    transition: transform 0.5s linear;
+
+    #modal-heading {
+        font-size: 2em;
+        font-weight: 700;
+        padding-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid white;
+    }
+
+    h4 {
+        font-size: 1.5em;
+    }
+
+    #icons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+
+        .socialMedia-icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+    
+            font-size: 30px;
+            transition:color 0.5s ,background-color 0.5s  ;
+        }
+
+        .facebook{
+            color: var(--facebook);
+            border: 1px solid var(--facebook);
+        }
+        .facebook:hover{
+            color: white;
+            background-color: var(--facebook);
+        }
+
+        .instagram{
+            color: var(--instagram);
+            border: 1px solid var(--instagram);
+        }
+        .instagram:hover{
+            color: white;
+            background-color: var(--instagram);
+        }
+
+        .twitter{
+            color: var(--twitter);
+            border: 1px solid var(--twitter);
+        }
+        .twitter:hover{
+            color: white;
+            background-color: var(--twitter);
+        }
+
+        .telegram{
+            color: var(--telegram);
+            border: 1px solid var(--telegram);
+        }
+        .telegram:hover{
+            color: white;
+            background-color: var(--telegram);
+        }
+
+        .whatsapp{
+            color: var(--whatsapp);
+            border: 1px solid var(--whatsapp);
+        }
+        .whatsapp:hover{
+            color: white;
+            background-color: var(--whatsapp);
+        }
+
+        .github{
+            color: var(--github);
+            border: 1px solid var(--github);
+        }
+        .github:hover{
+            color: white;
+            background-color: var(--github);
+        }
+    }
+
+}
+
+
+#overlay{
+    width: 100%;
+    height: 100%;
+    background-color: #c9c5c554;
+    backdrop-filter: blur(0.1rem);
+    position: absolute;
+    z-index: 20;
+    transform: scale(0);
+    transition: transform 0.0s linear;
+}
+
+#overlay.visible,.visible{
+    transform: scale(1);
+}
+
+@keyframes animation-Circle-Top {
+    0% {
+        left: 30%;
+    }
+
+    50% {
+        left: 40%;
+        scale: 0.8;
+    }
+
+    0% {
+        left: 30%;
+    }
+}
+
+@keyframes animation-Circle-Bottom {
+    0% {
+        right: 30%;
+    }
+
+    50% {
+        right: 40%;
+        scale: 0.8;
+    }
+
+    0% {
+        right: 30%;
+    }
+}
+
+@media (max-width:800px) {
+
+@keyframes animation-Circle-Top {
+    0% {
+        top: 30%;
+    }
+
+    50% {
+        top: 60%;
+        scale: 0.7;
+    }
+
+    0% {
+        top: 30%;
+    }
+}
+
+    @keyframes animation-Circle-Bottom {
+        0% {
+            bottom: 30%;
+        }
+    
+        50% {
+            bottom: 50%;
+            scale: 0.7;
+        }
+    
+        0% {
+            bottom: 30%;
+        }
+    }
+}

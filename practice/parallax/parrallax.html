@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parrallax</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: skyblue;
+        }
+
+        #wrapper {
+            width: 100vw;
+            overflow-y: auto;
+            overflow-x: hidden;
+            perspective: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topSection {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            perspective: 10px;
+            z-index: -1;
+        }
+
+        #background {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform: translateZ(-20px) scale(3);
+        }
+
+        #foreground {
+            width: 110%;
+            height: 110%;
+            position: absolute;
+            top: -100px;
+            transform: translatez(-10px) scale(2.5);
+        }
+
+        #headText {
+            color: white;
+            font-size: 80px;
+            font-weight: bolder;
+        }
+
+        #section {
+            background-color: skyblue;
+            position: relative;
+            width: 100%;
+            padding: 16px 0px;
+
+        }
+
+        .block {
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .noImageHead {
+            font-size: 70px;
+            color: rgb(13, 111, 150);
+            margin: 16px;
+        }
+
+        .imageHead {
+            text-align: center;
+            padding: 100px 0px;
+            color: white;
+            font-size: 60px;
+            font-weight: 900;
+        }
+
+        #section p {
+            background-color: skyblue;
+            padding: 16px 32px 32px 28px;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="topSection">
+            <img src="background.jpeg" alt="background" id="background">
+            <H1 id="headText">ADVENTURE</H1>
+            <img src="foreground.png" alt="foreground" id="foreground">
+        </div>
+
+
+        <div id="section">
+            <H2 class="noImageHead">ADVENTURE TIME</H2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique minima non quasi eum ad possimus
+                assumenda! Possimus, officiis excepturi reprehenderit ab magni esse velit mollitia! Error corrupti
+                magnam, ullam nostrum odit fugit cumque aspernatur nihil quibusdam eligendi accusamus perspiciatis
+                possimus sed. Nesciunt assumenda vel accusantium est fugit illum eum amet accusamus dolores, nisi,
+                repellat officiis temporibus quas facere molestiae eligendi, sequi fuga hic vitae rem! Expedita, numquam
+                doloribus quia, accusamus quam architecto quod amet ullam excepturi nesciunt eos tempora nobis.</p>
+            <div class="block" style="background-image: url(images-2.jpeg);">
+                <h2 class="imageHead">ParaGliding</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem illum amet quam expedita praesentium
+                    sint ullam labore nostrum natus! Praesentium recusandae, a magnam harum, nemo porro, cum ab incidunt
+                    quisquam modi totam cumque quasi! Tempore aspernatur, pariatur reiciendis optio facere maiores velit
+                    ea nulla id sint, qui fuga repellat culpa laboriosam ullam harum! Incidunt nam velit modi recusandae
+                    exercitationem, provident obcaecati pariatur officia repellendus, atque officiis mollitia ad libero,
+                    nisi ipsam minus omnis in odit similique corrupti. A, fugiat non!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione iste mollitia tempora magnam ab.
+                    Rem dicta voluptatem deleniti qui, molestiae dignissimos accusamus hic laboriosam officia facere est
+                    consequatur? Exercitationem inventore itaque culpa facilis illum nihil, libero, odit qui debitis
+                    quae aspernatur at molestias reiciendis, repellat animi eligendi corporis sapiente quo. Beatae vero
+                    quisquam officiis quaerat possimus reiciendis, eveniet corrupti odit iste odio numquam ut ea, rerum
+                    commodi ducimus! Quod praesentium quaerat esse voluptas quo sit, adipisci ab voluptatum iste
+                    necessitatibus dolor maiores fuga tempore voluptates cumque vitae soluta. Quod, architecto?</p>
+
+            </div>
+
+            <div class="block" style="background-image: url(images-3.jpeg);">
+                <h2 class="imageHead">ParaGliding</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem illum amet quam expedita praesentium
+                    sint ullam labore nostrum natus! Praesentium recusandae, a magnam harum, nemo porro, cum ab incidunt        
+                    quisquam modi totam cumque quasi! Tempore aspernatur, pariatur reiciendis optio facere maiores velit
+                    ea nulla id sint, qui fuga repellat culpa laboriosam ullam harum! Incidunt nam velit modi recusandae
+                    exercitationem, provident obcaecati pariatur officia repellendus, atque officiis mollitia ad libero,
+                    nisi ipsam minus omnis in odit similique corrupti. A, fugiat non!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione iste mollitia tempora magnam ab.
+                    Rem dicta voluptatem deleniti qui, molestiae dignissimos accusamus hic laboriosam officia facere est
+                    consequatur? Exercitationem inventore itaque culpa facilis illum nihil, libero, odit qui debitis
+                    quae aspernatur at molestias reiciendis, repellat animi eligendi corporis sapiente quo. Beatae vero
+                    quisquam officiis quaerat possimus reiciendis, eveniet corrupti odit iste odio numquam ut ea, rerum
+                    commodi ducimus! Quod praesentium quaerat esse voluptas quo sit, adipisci ab voluptatum iste
+                    necessitatibus dolor maiores fuga tempore voluptates cumque vitae soluta. Quod, architecto?</p>
+
+            </div>
+            <div class="block" style="background-image: url(images-4.jpeg);">
+                <h2 class="imageHead">ParaGliding</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem illum amet quam expedita praesentium
+                    sint ullam labore nostrum natus! Praesentium recusandae, a magnam harum, nemo porro, cum ab incidunt
+                    quisquam modi totam cumque quasi! Tempore aspernatur, pariatur reiciendis optio facere maiores velit
+                    ea nulla id sint, qui fuga repellat culpa laboriosam ullam harum! Incidunt nam velit modi recusandae
+                    exercitationem, provident obcaecati pariatur officia repellendus, atque officiis mollitia ad libero,
+                    nisi ipsam minus omnis in odit similique corrupti. A, fugiat non!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione iste mollitia tempora magnam ab.
+                    Rem dicta voluptatem deleniti qui, molestiae dignissimos accusamus hic laboriosam officia facere est
+                    consequatur? Exercitationem inventore itaque culpa facilis illum nihil, libero, odit qui debitis
+                    quae aspernatur at molestias reiciendis, repellat animi eligendi corporis sapiente quo. Beatae vero
+                    quisquam officiis quaerat possimus reiciendis, eveniet corrupti odit iste odio numquam ut ea, rerum
+                    commodi ducimus! Quod praesentium quaerat esse voluptas quo sit, adipisci ab voluptatum iste
+                    necessitatibus dolor maiores fuga tempore voluptates cumque vitae soluta. Quod, architecto?</p>
+
+            </div>
+            <div class="block" style="background-image: url(images-5.jpeg);">
+                <h2 class="imageHead">ParaGliding</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem illum amet quam expedita praesentium
+                    sint ullam labore nostrum natus! Praesentium recusandae, a magnam harum, nemo porro, cum ab incidunt
+                    quisquam modi totam cumque quasi! Tempore aspernatur, pariatur reiciendis optio facere maiores velit
+                    ea nulla id sint, qui fuga repellat culpa laboriosam ullam harum! Incidunt nam velit modi recusandae
+                    exercitationem, provident obcaecati pariatur officia repellendus, atque officiis mollitia ad libero,
+                    nisi ipsam minus omnis in odit similique corrupti. A, fugiat non!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione iste mollitia tempora magnam ab.
+                    Rem dicta voluptatem deleniti qui, molestiae dignissimos accusamus hic laboriosam officia facere est
+                    consequatur? Exercitationem inventore itaque culpa facilis illum nihil, libero, odit qui debitis
+                    quae aspernatur at molestias reiciendis, repellat animi eligendi corporis sapiente quo. Beatae vero
+                    quisquam officiis quaerat possimus reiciendis, eveniet corrupti odit iste odio numquam ut ea, rerum
+                    commodi ducimus! Quod praesentium quaerat esse voluptas quo sit, adipisci ab voluptatum iste
+                    necessitatibus dolor maiores fuga tempore voluptates cumque vitae soluta. Quod, architecto?</p>
+
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href=
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="card">
+            <div id="profilePhoto"></div>
+            <div id="name">Ram Kinkar</div>
+            <div id="bio">Future Software Engineer , Problem Solver</div>
+            <div id="buttons" >
+                <div id="shareProfile" class="button">
+                    <i class="fa fa-share"></i>
+                    Share My Profile
+                </div>
+                <div id="followMe" class="button">
+                    Follow Me
+                </div>
+            </div>
+
+        </div>
+
+        <div class="animatedCircles circle-top"></div>
+        <div class="animatedCircles circle-bottom"></div>
+
+        <div id="share-modal" class="modal">
+            <div id="modal-heading">
+                <span>Share My Profile</span>
+                <i class="fa fa-close" id="share-modal-close"></i>
+            </div>
+            <h4>Share this via</h4>
+            <div id="icons">
+                <i class="fa fa-facebook socialMedia-icon facebook"></i>
+                <i class="fa fa-twitter socialMedia-icon twitter"></i>
+                <i class="fa fa-instagram socialMedia-icon instagram"></i>
+                <i class="fa fa-whatsapp socialMedia-icon whatsapp"></i>
+                <i class="fa fa-telegram socialMedia-icon telegram"></i>
+            </div>
+        </div>
+
+        <div id="follow-modal" class="modal">
+            <div id="modal-heading">
+                <span>Follow Me</span>
+                <i class="fa fa-close" id="follow-modal-close" alt="*"></i>
+            </div>
+            <h4>Follow me on</h4>
+            <div id="icons">
+                <i class="fa fa-facebook socialMedia-icon facebook"></i>
+                <i class="fa fa-instagram socialMedia-icon instagram"></i>
+                <i class="fa fa-github socialMedia-icon github"></i>
+                <i class="fa fa-whatsapp socialMedia-icon whatsapp"></i>
+            </div>
+        </div>
+
+        <div id="overlay"></div>
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>

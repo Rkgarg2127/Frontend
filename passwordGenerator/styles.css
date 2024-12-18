@@ -1,0 +1,235 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+:root {
+
+    --dk-violet: hsl(268, 75%, 9%);
+    --lt-violet: hsl(268, 47%, 21%);
+    --lt-violet2: hsl(281, 89%, 26%);
+    --vb-violet: hsl(285, 91%, 52%);
+    --vb-violet2: hsl(290, 70%, 36%);
+
+    --vb-yellow: hsl(52, 100%, 62%);
+
+
+    --pl-white: hsl(0, 0%, 100%);
+
+    --vb-cyan: hsl(176, 100%, 44%);
+    --vb-cyan2: hsl(177, 92%, 70%);
+    --dk-text: hsl(198, 20%, 13%);
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    width: 100vw;
+
+    background: linear-gradient(var(--lt-violet), var(--vb-violet2));
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-evenly;
+    gap: 1rem;
+
+    width: 90%;
+    max-width: 400px;
+
+    #main-heading {
+        color: var(--pl-white);
+        opacity: 0.75;
+
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 800;
+        letter-spacing: 2px;
+        font-size: 28px;
+    }
+
+    #password-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background-color: var(--dk-violet);
+        border-radius: 1rem;
+        border-bottom: 0.35rem solid var(--vb-violet);
+        padding: 0.6rem 1.5rem;
+
+        #display-password {
+            background: none;
+            color: var(--vb-yellow);
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 30px;
+            letter-spacing: 2px;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .copy-box {
+            position: relative;
+
+
+            #copy-button {
+                width: 20px;
+            }
+
+            #copy-msg {
+                position: absolute;
+                background-color: var(--vb-violet2);
+                color: var(--vb-yellow);
+                font-size: 1rem;
+                top: -35px;
+                left: -25px;
+                padding: 5px 10px;
+                border-radius: 1rem;
+                transform-origin: bottom;
+                transition: all 0.5s ease-in-out;
+            }
+        }
+    }
+
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 1.5rem;
+
+        background-color: var(--dk-violet);
+        border-radius: 1rem;
+        padding: 2rem;
+        border-bottom: 0.35rem solid var(--lt-violet2);
+        color: white;
+
+        #password-length-box {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.5em;
+
+            #password-length {
+                color: var(--vb-yellow);
+            }
+        }
+
+        #password-length-input {
+            appearance: none;
+            border-radius: 15px;
+            height: 10px;
+            cursor: pointer;
+            background: linear-gradient(90deg, var(--vb-violet), var(--vb-yellow));
+            background-repeat: no-repeat;
+            border: none;
+            outline: none;
+            transition:  height 0.3s;
+        }
+
+        #password-length-input:hover{
+            height: 15px;
+            box-shadow: 0px 0px 20px 0px ;
+        }
+
+        #password-length-input::-webkit-slider-thumb{
+            appearance: none;
+            height: 25px;
+            width: 25px;
+
+            border-radius: 50%;
+            box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.50);
+            border: 3px solid var(--vb-yellow);
+            background: var(--vb-yellow);
+            transition:  box-sizing 0.5s , background 0.3s 0.3s,backgroundSize 0.2s;
+        }
+
+        #password-length-input::-webkit-slider-thumb:hover{
+            box-sizing: content-box;
+            background: var(--dk-violet)
+        }
+
+        #password-conditions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .check {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+
+            input {
+                appearance: none;
+                width: 20px;
+                height: 20px;
+                border: 1px solid var(--vb-cyan);
+                cursor: pointer;
+                position: relative;
+                border-radius: 0.35rem;
+            }
+
+            input:checked {
+                background-color: var(--vb-cyan);
+            }
+
+            input:checked::before {
+                content: '✔';
+                position: absolute;
+                color: var(--dk-text);
+                font-size: 1.05rem;
+                font-weight: 600;
+                left: 50%;
+                top: -3.5px;
+                transform: translateX(-50%) translateY(40%);
+            }
+
+            label {
+                letter-spacing: 1.5px;
+            }
+        }
+
+        #strength {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            p {
+                font-size: 1.5em;
+            }
+
+            #strength-sign {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                box-shadow: 0px 0px 12px 1px;
+            }
+        }
+
+    }
+
+
+
+    #generate-password-button {
+        color: var(--vb-yellow);
+        padding: 1rem;
+        font-size: 1.2em;
+        font-weight: 700;
+        background-color: var(--dk-violet);
+        border-radius: 0.75rem;
+        border-bottom: 0.35rem solid var(--vb-violet);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}

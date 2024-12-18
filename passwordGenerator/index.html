@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div id="main-heading">
+                Password Generator
+            </div>
+            <div id="password-box">
+                <input type="text"  placeholder="password" id="display-password"  readonly>
+                <div class="copy-box">
+                    <img src="assets/copy.svg" alt="copy" id="copy-button">
+                    <div id="copy-msg">copied</div>
+                </div>
+            </div>
+            <div class="input-container">
+                <div id="password-length-box">
+                    <p>Password Length</p>
+                    <div id="password-length">0</div>
+                </div>
+                <input type="range" min="1" max="25" step="1" id="password-length-input">
+
+                <div id="password-conditions">
+                    <div class="check">
+                        <input type="checkbox" id="upperCase">
+                        <label for="upperCase">Includes Upper Case</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="lowerCase">
+                        <label for="lowerCase">Includes Lower Case</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="numbers">
+                        <label for="numbers">Includes Numbers</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="symbols">
+                        <label for="symbols">Includes Symbols</label>
+                    </div>
+                </div>
+
+                <div id="strength">
+                    <p>Strength</p>
+                    <div id="strength-sign"></div>
+                </div>
+            </div>
+            <button id="generate-password-button">Generate password</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

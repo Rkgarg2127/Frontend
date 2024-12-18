@@ -1,0 +1,195 @@
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+    
+}
+
+:root {
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+    --colorbackground:rgba(219, 226, 239, 0.5);
+}
+
+body {
+    width: 100vw;
+    overflow-y: scroll;
+    padding: 4em;
+
+    color: var(--colorLight2);
+    background-image: linear-gradient(160deg, #091d34 0%, #649bdf 100%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* align-content: center;
+    justify-items: center; */
+    width: 600px;
+    height: 100%;
+    overflow-y: scroll;
+
+    gap: 3em;
+
+    .mainHeading {
+        font-size: 2em;
+        font-weight: bolder;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .tabBar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .weatherTab {
+            border-radius: 8px;
+            padding: 4px 12px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .currentWeatherTab {
+            background: var(--colorbackground);
+        }
+    }
+
+    .searchBar{
+        display: flex;
+        justify-content: stretch;
+        gap: 1em;
+        width: 100%;
+
+        #citySearchBar{
+            border: none;
+            background-color: var(--colorbackground);
+            color: var(--colorLight2);
+            width: 100%;
+            padding:10px 12px;
+            border-radius: 8px;
+        }
+    
+        input::placeholder {
+            color:  var(--colorLight2);
+            opacity: 1; /* Set opacity to 1 if you want the color to be fully opaque */
+        }
+    
+        #citySearchButton{
+            border-radius: 100%;
+            padding: 10px;
+            background-color: var(--colorDark2);
+            border: 2px solid var(--colorbackground);
+        }
+    }
+
+    .main{
+        position: relative;
+    }
+    
+
+    .weatherCard{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 1em;
+
+        .heroSection{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .weatherParameterPanel{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            column-gap: 1em;
+            justify-content: space-between;
+    
+            .weatherParameterCard{
+                background-color: var(--colorbackground);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+    
+                border-radius: 12px;
+                padding: 12px;
+    
+                img{
+                    width: 60px;
+                }
+                h3{
+                    font-size: 1.2em;
+                }
+                h4{
+                    background: -webkit-linear-gradient(var(--colorDark1), var(--colorDark2));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+    
+    }
+
+    .grantAccessCard{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+
+        img{
+            margin: 20px;
+            width: 80px;
+        }
+
+        #grantAccessButton{
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: var(--colorLight2);
+            background-color: var(--colorbackground);
+
+            p{
+                background: -webkit-linear-gradient(var(--colorDark1), var(--colorDark2));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                text-transform: capitalize;
+                font-weight: bold;
+            }
+        }
+
+
+    }
+
+    .imageCard{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img{
+            width: 300px;
+        }
+    }
+}
+
+.visible{
+    display: initial;
+}
+.invisible{
+    scale: 0;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body> 
+    <div class="container">
+        <div class="mainHeading">
+            Weather App
+        </div>
+        <div class="tabBar">
+            <div id="yourWeatherTab" class="weatherTab currentWeatherTab">Your Weather</div>
+            <div id="searchWeatherTab" class="weatherTab ">Search Weather</div>
+        </div>
+        <div class="searchBar">
+            <input type="text" placeholder="Search For City..." id="citySearchBar">
+            <button id="citySearchButton">
+                <img src="./images/search.png" width="20" height="20" loading="lazy">
+            </button>
+        </div>
+
+        <div class="main">
+
+        <div class="subCard weatherCard">
+            <div class="heroSection">
+                <div class="cityNameBox">
+                    <div cityName class="cityName"></div>
+                    <img countryFlag class="countryFlag">
+                </div>
+
+                <div class="timeDate">
+                    <div cityDate class="cityDate"></div>
+                    <div cityTime class="cityTime"></div>
+                </div>
+    
+                <div class="weatherMain">
+                    <div class="weatherDesc">
+                        <div weatherType class="WeatherType"></div>
+                        <img weatherTypeImg class="weatherTypeImg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="weatherParameterPanel">
+                <div class="weatherParameterCard">
+                    <img src="./images/temperature.png" alt="">
+                    <h3>Temperature:</h3>
+                    <h4 temperature></h4>
+                </div>
+
+                <div class="weatherParameterCard">
+                    <img src="./images/wind.png" alt="">
+                    <h3>WindSpeed:</h3>
+                    <h4 windSpeed></h4>
+                </div>
+
+                <div class="weatherParameterCard">
+                    <img src="./images/humidity.png" alt="">
+                    <h3>Humidity:</h3>
+                    <h4 humidity></h4>
+                </div>
+
+                <div class="weatherParameterCard">
+                    <img src="./images/cloud.png" alt="">
+                    <h3>Clouds:</h3>
+                    <h4 clouds></h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="subCard grantAccessCard">
+            <img src="images/location.png" alt="">
+            <h1>Grant Location Access</h1>
+            <h3>Allow Access to get weather Information</h3>
+            <button id="grantAccessButton"><p>Grant Access</p></button>
+        </div>
+
+        <div class="subCard loadingCard imageCard">
+            <img src="./images/loading.gif" alt="">
+            <h1>LOADING DATA...</h1>
+        </div>
+
+        <div class="subCard notFoundCard imageCard">
+            <img src="./images/not-found.png" alt="">
+            <h1>Oops! No Data Found</h1>
+        </div>
+        </div>
+        
+    </div>
+    <div class="messageBox">
+        <h4></h4>
+        <p></p>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
